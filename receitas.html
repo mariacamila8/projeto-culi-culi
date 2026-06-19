@@ -1,0 +1,661 @@
+ <script>
+
+    function explorarReceitas(){
+      alert("Bem-vindo ao mundo delicioso da culinária! 🍕👨‍🍳");
+    }
+
+  </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culi Culi </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f5dc57;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      background:#f5dc57;
+      border-bottom:2px solid #242121;
+      padding:18px 5%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    .logo-circle{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      background:#ff5b00;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      font-size:1.7rem;
+    }
+
+    .logo h1{
+      color:#ff5b00;
+      font-family:'Lobster', cursive;
+      font-size:2rem;
+    }
+
+    .menu{
+      display:flex;
+      gap:40px;
+      list-style:none;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#ff5b00;
+      font-weight:600;
+      font-size:1rem;
+    }
+
+    .save-btn{
+      background:#ff4a00;
+      color:#f5f0f0;
+      border:none;
+      padding:12px 24px;
+      border-radius:30px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    } 
+
+    .save-btn:hover{
+      transform:scale(1.05);
+    }
+
+    /* TÍTULO */
+
+    .title-area{
+      text-align:center;
+      margin-top:60px;
+      margin-bottom:40px;
+      padding:0 20px;
+    }
+
+    .title-area h2{
+      font-size:4rem;
+      color:#e74d00;
+      font-family:'Lobster', cursive;
+      margin-bottom:10px;
+    }
+
+    .title-area p{
+      font-size:1.4rem;
+      font-weight:500;
+    }
+
+    /* SEARCH */
+
+    .search-box{
+      width:85%;
+      margin:0 auto 50px;
+      background:#ff5b00;
+      padding:16px 25px;
+      border-radius:50px;
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .search-box input{
+      width:100%;
+      border:none;
+      background:#ffc2a6;
+      padding:18px;
+      border-radius:40px;
+      outline:none;
+      font-size:1rem;
+    }
+
+    .search-icon{
+      font-size:1.5rem;
+      color:#fff;
+    }
+
+    /* CARDS */
+
+    .recipes{
+      width:95%;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,280px);
+      justify-content:center;
+      column-gap:15px; 
+      row-gap:25px;    
+
+}
+
+    .card{
+      width:480px;
+      background:#ff7417;
+      border-radius:35px;
+      overflow:hidden;
+      padding-bottom:25px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:22px;
+      color:#fff;
+    }
+
+    .card-content h3{
+      font-size:2.2rem;
+      margin-bottom:10px;
+      font-family:'Lobster', cursive;
+    }
+
+    .country{
+      margin-bottom:25px;
+      font-size:1.1rem;
+      font-weight:500;
+    }
+
+    /* TAGS */
+
+    .tags{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+
+    .tags span{
+      background:#fff;
+      color:#ff5b00;
+      padding:10px 18px;
+      border-radius:25px;
+      font-size:0.9rem;
+      font-weight:700;
+    }
+
+    /* BUTTON */
+
+    .card button{
+      width:100%;
+      border:none;
+      background:#ff3b00;
+      color:#000;
+      padding:16px;
+      border-radius:35px;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+ 
+
+.btn-receita:hover{
+  background:#d92f00;
+   display:block;
+  width:100%;
+  text-align:center;
+  text-decoration:none;
+  background:#ff3b00;
+  color:white;
+  padding:16px;
+  border-radius:35px;
+  font-size:1rem;
+  font-weight:700;
+  transition:0.3s;
+}
+
+    .card button:hover{
+      background:#d92f00;
+      color:#fff;
+    }
+
+    /* BOTTOM CARDS */
+
+    .bottom-section{
+      width:85%;
+      margin:80px auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:35px;
+    }
+
+    .bottom-card{
+      background:#ff5b00;
+      padding:40px 25px;
+      border-radius:35px;
+      text-align:center;
+      color:#000;
+      transition:0.3s;
+    }
+
+    .bottom-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .icon-circle{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      background:#f5dc57;
+      margin:0 auto 25px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:2.5rem;
+    }
+
+    .bottom-card h3{
+      font-size:2rem;
+      margin-bottom:18px;
+      font-family:'Lobster', cursive;
+    }
+
+    .bottom-card p{
+      line-height:1.7;
+      font-size:1rem;
+      font-weight:500;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:768px){
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .menu{
+        gap:20px;
+      }
+
+      .title-area h2{
+        font-size:2.8rem;
+      }
+
+      .title-area p{
+        font-size:1rem;
+      }
+
+      .search-box{
+        width:92%;
+      }
+
+    }
+    .card a{
+    text-decoration:none;
+    color:white;
+}
+
+.card li{
+    list-style:none;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+
+     <div class="logo">🍕</div>
+
+      <h1>Culi Culi</h1>
+
+    </div>
+
+    <ul class="menu">
+      <li><a href="/Site Culi Culi.html">Início</a></li>
+      <li><a href="/Receitas.html">Receitas</a></li>
+      <li><a href="/Países.html">Países</a></li>
+    </ul>
+
+    <button class="save-btn">login</button>
+
+  </nav>
+
+  <!-- TÍTULO -->
+
+  <section class="title-area">
+
+    <h2>Receitas do mundo</h2>
+
+    <p>
+      Descubra sabores incríveis e culinárias de diversos países.
+    </p>
+
+  </section>
+
+  <!-- SEARCH -->
+
+  <div class="search-box">
+
+    <div class="search-icon">🔍</div>
+
+    <input type="text" placeholder="Buscar receita..." id="searchInput">
+
+  </div>
+
+  <!-- RECEITAS -->
+
+  <section class="recipes" id="recipeList">
+
+    <!-- CARD 1 -->
+
+    <div class="card">
+
+      <img src="https://i.pinimg.com/1200x/4c/6a/0d/4c6a0d9c4542ad7f7216df0b29b8db4d.jpg" alt="">
+
+      <div class="card-content">
+
+        <h3>Pasta Italiana</h3>
+
+        <div class="country">🇮🇹 Itália</div>
+
+        <div class="tags">
+          <span>Macarrão</span>
+          <span>Queijo</span>
+          <span>Molho</span>
+
+        </div>
+
+        <button><li><a href="/pasta-italiana.html" >
+          Modo de preparo</button></li>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+      <img src="https://i.pinimg.com/1200x/29/cb/77/29cb7710fc51acf86cf0b5ad7a30e3fb.jpg" alt="">
+
+      <div class="card-content">
+
+        <h3>Pamonha</h3>
+
+        <div class="country">🇧🇷 Brasil</div>
+
+        <div class="tags">
+          <span>Milho</span>
+          <span>Leite</span>
+          <span>Açúcar</span>
+
+        </div >
+
+        <button><li><a href="/Pamonha.html">
+          Modo de preparo</button></li>
+
+
+      </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="card">
+
+      <img src="https://i.pinimg.com/1200x/5b/8f/0e/5b8f0e272772b2796d87ab51a45cc485.jpg" alt="">
+      <div class="card-content">
+
+        <h3>Misto</h3>
+
+        <div class="country">🇧🇷 Brasil</div>
+
+        <div class="tags">
+          <span>Pão</span>
+          <span>Queijo</span>
+          <span>Presunto</span>
+        </div>
+
+        <button><li><a href="/misto-quente.html">
+          Modo de preparo</button>
+        
+
+      </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="card">
+
+      <img src="https://static.wixstatic.com/media/fdb759_9714ee2dea6a41a48581fbd3044758a2~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/fdb759_9714ee2dea6a41a48581fbd3044758a2~mv2.jpg" alt="">
+          <div class="card-content">
+
+        <h3>Churros</h3>
+
+        <div class="country">🇪🇸 Espanha</div>
+
+        <div class="tags">
+          <span>Chocolate</span>
+          <span>Doce</span>
+          <span>Canela</span>
+        </div>
+
+        <button><li><a href="/Churros.html">
+          Modo de preparo</button>
+
+      </div>
+      </div>
+
+ <!-- CARD 5 -->
+
+    <div class="card">
+
+      <img src="https://i.pinimg.com/736x/42/25/7a/42257a189335774f327a34437a53dd75.jpg" alt="">
+          
+      <div class="card-content">
+
+        <h3>ANZAC biscuits</h3>
+
+        <div class="country"> Nova Zelândia</div>
+
+        <div class="tags">
+          <span>Xarope dourado</span>
+          <span>Aveia</span>
+          <span>Açúcar</span>
+        </div>
+
+        <button><li><a href="/ANZAC biscuits.html">
+          Modo de preparo</button>
+
+      </div>
+
+    </div>
+       </div>
+
+ <!-- CARD 6 -->
+
+    <div class="card">
+
+      <img src="https://i.pinimg.com/1200x/65/f5/5e/65f55eab306e7c99de17c4e17733a394.jpg" alt="">
+          
+      <div class="card-content">
+
+        <h3>Bolo de Chocolate</h3>
+
+        <div class="country"> Brasil</div>
+
+        <div class="tags">
+          <span>Chocolate em pó</span>
+          <span>Farinha de trigo</span>
+          <span>Ovos</span>
+        </div>
+
+        <button><li><a href="/Bolo_chocolate.html">
+          Modo de preparo</button>
+
+      </div>
+    </div>
+
+    <div class="card">
+
+      <img src="https://i.pinimg.com/1200x/3a/81/fb/3a81fbc06523a7e2e3b72ae0d8a480f9.jpg" alt="">
+
+      <div class="card-content">
+
+        <h3>Tapioca</h3>
+
+        <div class="country">🇧🇷 Brasil</div>
+
+        <div class="tags">
+          <span>Coco ralado</span>
+          <span>Queijo</span>
+          <span>povilho doce</span>
+
+        </div>
+
+        <button><li><a href="/Tapioca.html" >
+          Modo de preparo</button></li>
+
+      </div>
+
+      <div class="card">
+
+      <img src="https://i.pinimg.com/1200x/3a/81/fb/3a81fbc06523a7e2e3b72ae0d8a480f9.jpg" alt="">
+
+      <div class="card-content">
+
+        <h3>Tapioca</h3>
+
+        <div class="country">🇧🇷 Brasil</div>
+
+        <div class="tags">
+          <span>Coco ralado</span>
+          <span>Queijo</span>
+          <span>povilho doce</span>
+
+        </div>
+
+        <button><li><a href="/Tapioca.html" >
+          Modo de preparo</button></li>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CARDS FINAIS -->
+
+  <section class="bottom-section">
+
+    <div class="bottom-card">
+
+      <div class="icon-circle">🌍</div>
+
+      <h3>PAÍSES</h3>
+
+      <p>
+        Explore receitas típicas e culturas gastronômicas
+        de vários lugares do mundo.
+      </p>
+
+    </div>
+
+    <div class="bottom-card">
+
+      <div class="icon-circle">📖</div>
+
+      <h3>MENUS</h3>
+
+      <p>
+        Descubra combinações deliciosas
+        para qualquer ocasião.
+      </p>
+
+    </div>
+
+    <div class="bottom-card">
+
+      <div class="icon-circle">👨‍🍳</div>
+
+      <h3>PERSONALIDADES</h3>
+
+      <p>
+        Conheça chefs e pratos famosos
+        da culinária mundial.
+      </p>
+
+    </div>
+
+  </section>
+
+  <script>
+
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("keyup", function(){
+
+      let filter = searchInput.value.toLowerCase();
+
+      let cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+
+        let title = card.querySelector("h3").textContent.toLowerCase();
+
+        if(title.includes(filter)){
+          card.style.display = "block";
+        }else{
+          card.style.display = "none";
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Churros</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
+}
+
+body{
+background:#f2db59;
+background-image:url(https://i.pinimg.com/1200x/24/66/e4/2466e43bbe78fa4441d9ebeb247e4358.jpg);
+background-size:350px;
+}
+
+/* NAVBAR */
+
+.navbar{
+width:100%;
+background:#f2db59;
+padding:12px 25px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-bottom:2px solid #d8bf34;
+}
+
+.menu{
+      display:flex;
+      gap:40px;
+      align-items:center;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#ff5b00;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+ .login-btn{
+      background:#ff5b00;
+      color:white;
+      border:none;
+      padding:8px 15px;
+      border-radius:15px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+.login-btn:hover{
+background:#ff2f00;
+}
+
+/* IMAGEM */
+
+.main-card{
+width:579px;
+margin:0 auto;
+position:relative;
+}
+  .main-card{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.main-card img{
+width:600px;
+height:500px;
+object-fit:cover;
+padding:10px;
+display:block;
+margin:auto;
+ }
+
+.overlay{
+position:absolute;
+bottom:0;
+width:100%;
+background:rgba(255,136,0,0.5);
+padding:12px;
+text-align:center;
+color:white;
+font-size:38px;
+font-style:italic;
+}
+
+/* CONTEÚDO */
+
+.content{
+width:90%;
+margin:20px auto;
+}
+
+.box{
+background:#ff9d2f;
+padding:20px;
+border-radius:20px;
+margin-bottom:25px;
+width:fit-content;
+border:4px solid #ff4d00;
+box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+}
+
+.box h2{
+font-style:italic;
+margin-bottom:10px;
+}
+
+.box ul,
+.box ol{
+margin-left:20px;
+line-height:1.8;
+font-size:18px;
+font-style:italic;
+font-weight:bold;
+}
+
+.prepare{
+width:80%;
+}
+
+/* BOTÕES */
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.next-btn{
+padding:14px 25px;
+background:#ff5b00;
+color:white;
+border:none;
+border-radius:15px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.next-btn:hover{
+background:#ff2f00;
+transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:700px){
+
+.prepare{
+width:100%;
+}
+
+.box{
+width:100%;
+}
+
+.overlay{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="menu">
+
+<a href="/Site Culi Culi.html">Início</a>
+<a href="/Receitas.html">Receitas</a>
+<a href="misto.html">países</a>
+
+</div>
+
+<button class="login-btn"
+onclick="irLogin()">login</button>
+
+</nav>
+
+<!-- IMAGEM -->
+
+<div class="main-card">
+
+<img src="https://static.wixstatic.com/media/fdb759_9714ee2dea6a41a48581fbd3044758a2~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/fdb759_9714ee2dea6a41a48581fbd3044758a2~mv2.jpg" alt="">
+
+<div class="overlay">
+Churros
+</div>
+
+</div>
+
+<!-- CONTEÚDO -->
+
+<div class="content">
+
+<div class="box">
+
+<h2>Ingredientes:</h2>
+
+<ul>
+
+<li>1 xícara de água</li>
+
+<li>1 colher de manteiga</li>
+
+<li>1 xícara de farinha de trigo</li>
+
+<li>Açúcar e canela</li>
+
+<li>Doce de leite</li>
+
+</ul>
+
+</div>
+
+<div class="box prepare">
+
+<h2>Modo de preparo:</h2>
+
+<ol>
+
+<li>Ferva água com manteiga e sal.</li>
+
+<li>Adicione a farinha e mexa até formar massa.</li>
+
+<li>Coloque em saco de confeitar.</li>
+
+<li>Frite em óleo quente.</li>
+
+<li>Passe no açúcar com canela e recheie.</li>
+
+</ol>
+
+</div>
+
+<!-- BOTÕES -->
+
+<div class="buttons">
+
+<button class="next-btn"
+onclick="voltarPagina()">
+
+← Receita Anterior
+
+</button>
+
+<button class="next-btn"
+onclick="inicioPagina()">
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function voltarPagina(){
+
+window.location.href = "pamonha.html";
+
+}
+
+function inicioPagina(){
+
+window.location.href = "site Culi Culi.html";
+
+}
+
+function irLogin(){
+
+window.location.href = "login.html";
+
+}
+
+</script>
+
+</body>
+</html>

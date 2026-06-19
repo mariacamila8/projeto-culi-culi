@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Países e Culturas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#c98cff;
+    min-height:100vh;
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    background:#b26cf1;
+}
+
+.logo{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#ffb24d;
+    font-weight:600;
+    font-size:14px;
+}
+
+.login-btn{
+    background:#6a1bff;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:15px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* HEADER */
+
+.header-box{
+    width:90%;
+    margin:30px auto;
+    background:#f89a1c;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    border:8px solid #7a2cff;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.header-box h1{
+    color:#3b1d00;
+    margin-bottom:10px;
+}
+
+.header-box p{
+    font-style:italic;
+}
+
+/* BOTÕES */
+
+.categories{
+    width:90%;
+    margin:20px auto;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.categories button{
+    background:#d46dff;
+    border:none;
+    padding:14px 22px;
+    border-radius:18px;
+    color:#2f0045;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 10px rgba(0,0,0,0.15);
+}
+
+.categories button:hover{
+    transform:translateY(-5px);
+    background:#ffb347;
+}
+
+/* CARDS */
+
+.cards-container{
+    width:95%;
+    margin:auto;
+}
+
+.card{
+    background:#a43cff;
+    border-radius:25px;
+    padding:15px;
+    margin-bottom:25px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    position:relative;
+    border:5px solid #d97fff;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card.active{
+    border:5px solid  #d97fff;
+}
+
+.card img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid white;
+}
+
+.card-content{
+    flex:1;
+}
+
+.card-content h3{
+    color:#2f0038;
+    margin-bottom:8px;
+}
+
+.card-content h4{
+    color:#ffcf52;
+    margin-bottom:10px;
+    font-size: 20px;
+}
+
+.card-content p{
+    font-size:14px;
+    line-height:1.5;
+     font-size: 20px;
+}
+
+.orange-bar{
+    width:100%;
+    height:18px;
+    background:#f89a1c;
+    font-size: 100px;
+    border-radius:15px;
+    margin-top:10px;
+}
+
+/* FOOTER BOXES */
+
+.bottom-boxes{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+   
+}
+
+.info-box{
+    background:#f89a1c;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    color:#2b1200;
+}
+
+.info-box h2{
+    margin:10px 0;
+}
+
+.info-box p{
+    font-size:13px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">🍕</div>
+
+    <div class="menu">
+        <a href="/Site Culi Culi.html">Início</a>
+        <a href="/Receitas.html">Receitas</a>
+        <a href="/Países.html">Países</a>
+    </div>
+
+    <button class="login-btn" onclick="login()">login</button>
+
+</nav>
+
+<!-- HEADER -->
+
+<div class="header-box">
+
+    <h1>Países e Culturas</h1>
+
+    <p>
+        Embarque em uma jornada gastronômica ao redor do mundo
+    </p>
+
+</div>
+
+<!-- BOTÕES -->
+
+<div class="categories">
+
+    <button onclick="mostrarMensagem('América')">América</button>
+
+    <button onclick="mostrarMensagem('África')">África</button>
+
+    <button onclick="mostrarMensagem('Ásia')">Ásia</button>
+
+    <button onclick="mostrarMensagem('Europa')">Europa</button>
+
+    <button onclick="mostrarMensagem('Oceania')">Oceania</button>
+
+</div>
+
+<!-- CARDS -->
+
+<div class="cards-container">
+
+    <!-- CARD 1 -->
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?q=80&w=1000&auto=format&fit=crop">
+
+        <div class="card-content">
+
+            <h3>Canadá - Toronto</h3>
+
+            <h4>O Toque Rústico e Multicultural</h4>
+
+            <p>
+              A culinária canadense é um reflexo de suas raízes indígenas,
+ francesas e britânicas, além de uma forte influência moderna de imigrantes asiáticos.
+            </p>
+
+            <div class="orange-bar"></div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1000&auto=format&fit=crop">
+
+        <div class="card-content">
+
+            <h3>Marrocos - Marrakech</h3>
+
+            <h4>A Explosão de Especiarias</h4>
+
+            <p>
+              Uma das cozinhas mais aromáticas do mundo, unindo tradições árabes, berberes e mediterrâneas. 
+              O equilíbrio entre o doce e o salgado é sua marca registrada.
+            </p>
+
+            <div class="orange-bar"></div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="card active">
+
+        <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=1000&auto=format&fit=crop">
+
+        <div class="card-content">
+
+            <h3>Japão - Tóquio</h3>
+
+            <h4>A Arte da Precisão</h4>
+
+            <p>
+              Focada na sazonalidade, no frescor dos ingredientes e na apresentação visual impecável.
+              É uma culinária que respeita o sabor natural dos alimentos.
+            </p>
+
+            <div class="orange-bar"></div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop">
+
+        <div class="card-content">
+
+            <h3>Suíça - Zürich</h3>
+
+            <h4>O Paraíso do Queijo e Chocolate</h4>
+
+            <p>
+                Influenciada pelos vizinhos (França, Alemanha e Itália),
+              a comida suíça é reconfortante, calórica e perfeita para o clima de montanha.
+            </p>
+
+            <div class="orange-bar"></div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 5 -->
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1000&auto=format&fit=crop">
+
+        <div class="card-content">
+
+            <h3>Austrália - Sidney</h3>
+
+            <h4> O Churrasco e a Fusão Moderna</h4>
+
+            <p>
+               A gastronomia australiana é jovem e descontraída.
+              Mistura a tradição britânica com ingredientes nativos (bushfood) e uma forte influência da cozinha tailandesa e vietnamita.
+            </p>
+
+            <div class="orange-bar"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER BOXES -->
+
+<div class="bottom-boxes">
+
+    <div class="info-box">
+
+        <h1>🌍</h1>
+
+        <h2>PAÍSES</h2>
+
+        <p>
+            Explore culturas e gastronomias diferentes do mundo inteiro.
+        </p>
+
+    </div>
+
+    <div class="info-box">
+
+        <h1>🎵</h1>
+
+        <h2>MÚSICA</h2>
+
+        <p>
+            Descubra ritmos culturais e músicas típicas de cada país.
+        </p>
+
+    </div>
+
+    <div class="info-box">
+
+        <h1>👥</h1>
+
+        <h2>PERSONALIDADES</h2>
+
+        <p>
+            Conheça figuras famosas e influentes da culinária mundial.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+function login(){
+    alert("Página de login em desenvolvimento 💜");
+}
+
+function mostrarMensagem(local){
+    alert("Explorando a cultura da " + local + " 🌎");
+}
+
+</script>
+
+</body>
+</html>

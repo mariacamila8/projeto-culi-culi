@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culi Culi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f4d84f;
+      color:#111;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      background:#f6c433;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 5%;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      color:#ff5b00;
+      font-size:30px;
+      font-weight:700;
+      font-family:'Lobster', cursive;
+    }
+
+    .menu{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#ff5b00;
+      font-size: 20px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      color:#000;
+    }
+
+    .btn-nav{
+      background:#ff3c00;
+      color:#fff;
+      border:none;
+      padding:10px 18px;
+      border-radius:20px;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-nav:hover{
+      transform:scale(1.05);
+    }
+
+    /* HERO */
+
+    .hero{
+      background:linear-gradient(#ecaf08 65%, #f4d84f 35%);
+      text-align:center;
+      padding:50px 8%;
+      position:relative;
+      overflow:hidden;
+}
+
+
+    .floating-food{
+      position:absolute;
+      width:70px;
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .food1{
+      left:5%;
+      top:90px;
+    }
+
+    .food2{
+      right:8%;
+      top:120px;
+    }
+
+    .food3{
+      left:10%;
+      bottom:120px;
+    }
+
+    .food4{
+      right:10%;
+      bottom:130px;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0);}
+      50%{transform:translateY(-15px);}
+      100%{transform:translateY(0);}
+    }
+
+    .chef-img{
+      width:340px;
+      max-width:90%;
+      margin-bottom:20px; 
+    }
+
+    .hero h1{
+      font-size:2.4rem;
+      color:#ff5b00;
+      margin-bottom:15px;
+      font-size: 30px;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:30px;
+      font-size:20px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .hero-buttons button{
+      border:none;
+      padding:14px 28px;
+      border-radius:30px;
+      font-size: 20px;
+      background:#ff3c00;
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .hero-buttons button:hover{
+      transform:translateY(-5px);
+      background:#d92f00;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:60px 6%;
+    }
+
+    .orange-section{
+      background:#ff6900;
+      font-size: 20px;
+      border-radius:35px;
+      color:#fff;
+      margin:40px 5%;
+    }
+
+    .section-title{
+      margin-bottom:25px;
+    }
+
+    .section-title h2{
+      font-size:25px;
+      margin-bottom:10px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:20px;
+    }
+
+    /* CARD */
+
+    .card{
+      background:#fff;
+      border-radius:20px;
+      overflow:hidden;
+      color:#111;
+      box-shadow:0 8px 18px rgba(0,0,0,0.15);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:18px;
+    }
+
+    .country{
+      font-size:12px;
+      color:#777;
+      margin-bottom:10px;
+    }
+
+    .card h3{
+      color:#ff5b00;
+      margin-bottom:12px;
+    }
+
+    .ingredients{
+      font-size:12px;
+      margin-bottom:15px;
+      line-height:1.5;
+    }
+
+    .card button{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:12px;
+      background:#ff3c00;
+      color:#fff;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .card button:hover{
+      background:#d92f00;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#f6c433;
+      font-weight:500;
+      margin-top:30px;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:768px){
+
+      .navbar{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .menu{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:1.8rem;
+      }
+
+      .floating-food{
+        width:55px;
+      }
+    }
+
+    
+    .card a{
+    text-decoration:none;
+    color:white;
+}
+
+.card li{
+    list-style:none;
+}
+
+  </style>
+</head> 
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">🍕 Culi Culi</div>
+
+    <ul class="menu">
+      <li><a href="/Site Culi Culi.html">Início</a></li>
+      <li><a href="/Receitas.html">Receitas</a></li>
+      <li><a href="/Países.html">Países</a></li>
+    </ul>
+
+    <button class="btn-nav"><li><a href="/login.html">login</a></li>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <!-- COMIDAS FLUTUANDO -->
+
+    <img class="floating-food food1" src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png">
+    <img class="floating-food food2" src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png">
+    <img class="floating-food food3" src="https://cdn-icons-png.flaticon.com/512/590/590685.png">
+    <img class="floating-food food4" src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+
+    <!-- CHEF -->
+
+    <img src="https://i.pinimg.com/736x/79/a3/ff/79a3ffd93ace0ec31d5618666a928820.jpg" alt="chef-img">
+
+    <h1>Bem Vindo ao Culi Culi!</h1>
+
+    <p>
+      Aprenda receitas deliciosas e típicas de vários países do mundo.
+      Descubra culturas, ingredientes especiais e segredos da gastronomia.
+    </p>
+
+    <div class="hero-buttons">
+      <button onclick="explorarReceitas()">Explore Receitas</button>
+    </div>
+
+  </section>
+
+  <!-- RECEITAS RÁPIDAS -->
+
+  <section class="orange-section">
+
+    <div class="section-title">
+      <h2>🍔 Receitas Rápidas</h2>
+      <p>Perfeito para iniciantes! Pratos prontos em menos de 15 minutos.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <img src="https://i.pinimg.com/736x/50/32/32/503232251c0f584606f5dae33d2604b9.jpg" alt="">
+
+        <div class="card-content">
+
+          <div class="country">🇮🇹 Itália</div>
+
+          <h3>Macarrão Cremoso</h3>
+
+          <p class="ingredients">
+            Creme de leite, queijo parmesão, ervas e molho especial.
+          </p>
+
+          <button>Ver Receita</button>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+       <img src="https://i.pinimg.com/736x/dc/e2/d9/dce2d98a99d036e4b7a72b16dc6d1b80.jpg" alt="">
+
+        <div class="card-content">
+
+          <div class="country">🇲🇽 México</div>
+
+          <h3>Tacos Mexicanos</h3>
+
+          <p class="ingredients">
+            Carne temperada, queijo cheddar e molho picante.
+          </p>
+
+          <button>Ver Receita</button>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <div class="country">🇫🇷 França</div>
+
+          <h3>Bolo de Chocolate</h3>
+
+          <p class="ingredients">
+            Chocolate premium e cobertura cremosa francesa.
+          </p>
+
+          <button>Ver Receita</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRATOS PRINCIPAIS -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>🍝 Pratos Principais:</h2>
+
+      <p>Explore receitas populares de diferentes países.</p>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <img src="https://i.pinimg.com/1200x/4c/6a/0d/4c6a0d9c4542ad7f7216df0b29b8db4d.jpg" alt="">
+
+        <div class="card-content">
+
+          <div class="country">🇮🇹 Itália</div>
+
+          <h3>Pasta Italiana</h3>
+
+          <p class="ingredients">
+            Ingredientes principais:
+            molho artesanal, queijo e ervas.
+          </p>
+
+          <button><li><a href="/pasta-italiana.html">Receita</button></li>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1000&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <div class="country">🇧🇷 Brasil</div>
+
+          <h3> Bolo de Chocolate</h3>
+
+          <p class="ingredients">
+            Ingredientes principais:
+            chocolate, leite e farinha.
+          </p>
+
+          <button><a href="/Bolo_chocolate.html">Receita</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Culi Culi - Todos os direitos reservados.
+  </footer>
+
+  

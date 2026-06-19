@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culi Culi</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Georgia, serif;
+    }
+
+    body{
+      background:#e8d85b;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      padding:12px 25px;
+      background:#e8d85b;
+      border-bottom:1px solid #c7b947;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .menu{
+      display:flex;
+      gap:40px;
+      align-items:center;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#ff5b00;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .logo{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:20px;
+    }
+
+    .login-btn{
+      background:#ff5b00;
+      color:white;
+      border:none;
+      padding:8px 15px;
+      border-radius:15px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    /* CARD PRINCIPAL */
+
+    .main-card{
+      width:379px;
+      margin:20px auto;
+      position:relative;
+    }
+    .main-card{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.main-card img{
+width:600px;
+height:500px;
+object-fit:cover;
+padding:10px;
+display:block;
+margin:auto;
+ }
+
+    body{
+      background:#f2db59;
+      background-image:url(https://i.pinimg.com/1200x/24/66/e4/2466e43bbe78fa4441d9ebeb247e4358.jpg);
+      background-size:350px;
+    }
+
+    .overlay{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      background:rgba(255,132,39,0.6);
+      color:white;
+      text-align:center;
+      padding:15px;
+      font-size:40px;
+      font-style:italic;
+      background:#ff9d2f;
+      padding:20px;
+    }
+
+    /* CONTEÚDO */
+
+    .content{
+      width:90%;
+      margin:30px auto;
+    }
+
+    .box{
+      background:#ff9d2f;
+      padding:25px;
+      border-radius:25px;
+      margin-bottom:30px;
+      width:fit-content;
+      min-width:260px;
+      padding:20px;
+      border:4px solid #ff4d00;
+      box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+
+      
+    }
+
+    .box h2{
+      margin-bottom:15px;
+      font-style:italic;
+      padding:20px;
+
+    }
+
+    .box ul,
+    .box ol{
+      margin-left:25px;
+      line-height:2;
+      font-size:18px;
+      font-style:italic;
+      font-weight:bold;
+      padding:20px;
+
+    }
+
+    .prepare{
+      width:90%;
+    }
+
+    .emoji{
+      position:absolute;
+      left:20px;
+      top:320px;
+      font-size:55px;
+    }
+
+    @media(max-width:700px){
+
+      .menu{
+        gap:15px;
+        flex-wrap:wrap;
+      }
+
+      .overlay{
+        font-size:30px;
+      }
+
+      .box{
+        width:100%;
+      }
+
+      .prepare{
+        width:100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">🍕</div>
+
+    <div class="menu">
+      <a href="/Site Culi Culi.html">Início</a>
+      <a href="/Receitas.html">Receitas</a>
+      <a href="paises.html">Países</a>
+     
+    </div>
+
+    <button class="login-btn" onclick="login()"> login</button>
+
+  </nav>
+
+  <!-- IMAGEM -->
+
+  <div class="main-card">
+
+    <img src="https://i.pinimg.com/1200x/4c/6a/0d/4c6a0d9c4542ad7f7216df0b29b8db4d.jpg" alt="">
+
+    <div class="overlay">
+      Pasta Italiana
+    </div>
+
+  </div>
+
+  <div class="emoji"></div>
+
+  <!-- INGREDIENTES -->
+
+  <div class="content">
+
+    <div class="box">
+
+      <h2>Ingredientes</h2>
+
+      <ul>
+        <li>200g espaguete</li>
+        <li>100g bacon</li>
+        <li>2 ovos</li>
+        <li>50g parmesão</li>
+        <li>Sal e pimenta</li>
+      </ul>
+
+    </div>
+
+    <!-- MODO DE PREPARO -->
+
+    <div class="box prepare">
+
+      <h2>Modo de Preparo</h2>
+
+
+      <ol>
+        <li>Cozinhe o espaguete em água fervente com sal</li>
+        <li>Frite o bacon picado até ficar crocante</li>
+        <li>Bata os ovos com o parmesão ralado</li>
+        <li>Misture tudo ainda quente e tempere</li>
+      </ol>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function login(){
+      alert("Página de login em desenvolvimento 👨‍🍳");
+    }
+
+  </script>
+
+</body>
+</html>

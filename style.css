@@ -1,0 +1,75 @@
+*{
+
+.prato-info{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px;
+}
+
+.prato-info h3{
+  font-size:24px;
+  line-height:1;
+}
+
+.prato-info span{
+  font-size:13px;
+}
+
+.prato-info button{
+  border:none;
+  background:#111;
+  color:white;
+  padding:8px 14px;
+  border-radius:18px;
+  font-size:10px;
+  cursor:pointer;
+}
+
+.tags{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:0 15px;
+}
+
+.tags span{
+  background:#f3f3f3;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:10px;
+}
+
+.prato-card h4{
+  padding:15px 15px 5px;
+  font-size:14px;
+}
+
+.prato-card p{
+  padding:0 15px 20px;
+  font-size:11px;
+  margin-top:0;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  .cards-pequenos{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .pratos-grid{
+    grid-template-columns:1fr;
+  }
+
+  .chef{
+    width:280px;
+  }
+
+  .hero{
+    height:350px;
+  }
+
+}
+}
